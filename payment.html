@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - Juravliki</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="payment-page">
+
+<!-- .l-main -->
+<div class="l-main">
+
+    <!-- header -->
+    <header>
+        <div class="b-logo">
+            <a href="/"><img src="img/header/logo.png" alt="Журавлики"></a>
+        </div>
+        <div class="b-menu">
+            <h1>Акция Благотворительного Фонда «Настенька»</h1>
+            <ul class="clearfix">
+                <li><a href="about_project.html">О проекте</a></li>
+                <li><a href="about_fond.html">О фонде</a></li>
+                <li><a href="list.html">Лента пожеланий</a></li>
+                <li><a href="about_partner.html">О партнерах</a></li>
+                <li><a href="friends.html">Сообщество друзей «Настеньки»</a></li>
+            </ul>
+        </div>
+        <div class="b-fondlogo">
+            <a href="#"><img src="img/header/fondlogo.png" alt=""></a>
+        </div>
+        <div style="clear:both;">&nbsp;</div>
+    </header>
+    <!-- /header -->
+
+        <!-- .b-payment -->
+        <div class="l-bigcontent">
+            <div class="b-payment">
+                <img class="triangles-payment-top" src="img/payment/triangles-payment-top.png" alt="">
+                <img class="triangles-payment-bottom" src="img/payment/triangles-payment-bottom.png" alt="">
+                <form action="">
+                    <h1>Выбрать количество журавликов:</h1>
+                    <div class="b-payment-form-count">
+                        <div>
+                            <input type="text" id="itCount" name="itCount" onkeyup="payment.calcIt(this)" value="1" style="width: 45px; text-align: center">
+                            <input type="text" id="itSumm" name="itSumm" readonly="true" value="50">
+                            <span class="counter-btn counter-btn-up"></span><span class="counter-btn counter-btn-down"></span>
+                        </div>
+                    </div>
+                    <div class="b-payment-form-middle clearfix">
+                        <div class="b-payment-form-color">
+                            Выбрать цвет: <br>
+                            <a data-color="#e3c3f5"><span style="background: #e3c3f5"></span></a>
+                            <a data-color="#c3c3f5"><span style="background: #c3c3f5"></span></a>
+                            <a data-color="#c3e3f5"><span style="background: #c3e3f5"></span></a>
+                            <a data-color="#c3f5c5"><span style="background: #c3f5c5"></span></a>
+                            <a data-color="#f5f5c3"><span style="background: #f5f5c3"></span></a>
+                            <a data-color="#f5e5c3"><span style="background: #f5e5c3"></span></a>
+                            <a data-color="#f5c3c3"><span style="background: #f5c3c3"></span></a>
+                        </div>
+                        <input type="hidden" name="colorMessage" id="colorMessage">
+
+                        <div class="b-payment-form-message">
+                            <textarea name="itxMessage" onkeyup="payment.messageCount(this)" id="itxMessage"></textarea>
+                            <p>Оставить пожелание:</p>
+                        </div>
+                    </div>
+                    <h1>Выбрать способ оплаты:</h1>
+                    <div class="clearfix">
+                        <div class="left-column ">
+                            <label ><input name="service" checked="true" type="radio" value="1">Яндекс.Деньги — рубли</label><br>
+                            <label ><input name="service" type="radio" value="2">RBK Money — рубли</label><br>
+                            <label ><input name="service" type="radio" value="3">PayPal Visa, Mastercard — USD</label><br>
+                            <label ><input name="service" type="radio" value="4">С помощью SMS</label><br>
+                            <label ><input name="service" type="radio" value="5">С мобильного телефона</label><br>
+                            <label ><input name="service" type="radio" value="6">Банковская карта (через Chronopay)</label>
+                        </div>
+                        <div class="right-column ">
+                            <input type="text" name="platData" id="platData" placeholder="Данные о плательщике"><br>
+                            <input type="email" name="platMail" id="platMail" placeholder="mail"><br>
+                            <input type="tel" name="platPhone" id="platPhone" placeholder="Мобильный телефон"><br>
+                            <button type="submit">Оплатить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.b-payment -->
+
+    <!-- .b-counter -->
+    <div class="b-counter">
+    <div><span class="b-counter-count">00109<span style="color: #f7941d;">5</span></span><span class="b-counter-text">журавлика собрано</span></div>
+    </div>
+    <!-- /.b-counter -->
+
+    <!-- footer -->
+    <footer>
+        <div class="clearfix">
+            <div class="b-social">&nbsp;</div>
+            <div class="b-copy">
+                <p>&copy; Благотворительный фонд «Настенька». Все права защищены.</p>
+            </div>
+            <div class="b-sponsor"></div>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+</div>
+<!-- /.l-main -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+    $($.proxy(payment.initialize, payment));
+</script>
+</body>
+</html>
